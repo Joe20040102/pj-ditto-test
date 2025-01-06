@@ -20,3 +20,15 @@ def generate_response(text: str) -> str:
 
     ai_msg = llm.invoke(messages)
     return ai_msg.content
+
+def stream_generate_response(text: str):
+    messages = [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that translates Japanese to French. Translate the user sentence.",
+        },
+        {"role": "user", "content": text},
+    ]
+
+    for token in llm.stream(messages):
+        yield token.content
