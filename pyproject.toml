@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pj-ditto-test"
+version = "0.1.0"
+description = ""
+authors = ["j.sato <Joichiro.20040102@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain-google-vertexai = "^2.0.9"
+fastapi = "^0.115.6"
+uvicorn = "^0.34.0"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+black = "^24.10.0"
+flake8 = "^7.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
