@@ -9,19 +9,7 @@ llm = ChatVertexAI(
 )
 
 
-def generate_response(text: str) -> str:
-    messages = [
-        {
-            "role": "system",
-            "content": "You are a helpful assistant that translates Japanese to French. Translate the user sentence.",
-        },
-        {"role": "user", "content": text},
-    ]
-
-    ai_msg = llm.invoke(messages)
-    return ai_msg.content
-
-def stream_generate_response(text: str):
+async def stream_generate_response(text: str):
     messages = [
         {
             "role": "system",
